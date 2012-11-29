@@ -19,7 +19,8 @@ class SystemInstaller extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return 'phpdocumentor-template' === $packageType;
+        //return 'phpdocumentor-template' === $packageType;
+	return true;
     }
 }
 

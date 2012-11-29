@@ -11,8 +11,12 @@ class SystemInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
+	ob_start();
 	print_r($package);
-        return 'data/templates/';
+        $output = ob_get_clean();
+        file_put_contents( "loucolog.log",  $output , FILE_APPEND);
+        
+	return 'data/templates/';
     }
 
     /**

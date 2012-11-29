@@ -11,12 +11,11 @@ class SystemInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
-        if (!empty()) {
-		return '../../' . $package->getTargetDir();
-	}
-	else {
+        if ( $package->getTargetDir() == "") {
 		throw new \InvalidArgumentException('Can\'t find property target-dir');
 	}
+
+	return ('../../' . $package->getTargetDir());
     }
 
     /**

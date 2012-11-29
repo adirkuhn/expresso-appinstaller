@@ -2,16 +2,11 @@
     "name": "expresso/appmanager-installer",
     "description": "Expresso AppManager Bundle Instaler",
     "type": "composer-installer",
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/adirkuhn/ExpressoFoo.git"
+    "autoload": {
+        "psr-0": {
+            "Custom\\Expresso\\": "src/"
         }
-    ],
-    "require": {
-        "expresso/expressofoobundle": "dev-master"
     },
-
     "extra" : {
         "class" : "Custom\\Expresso\\SystemInstaller"
     }

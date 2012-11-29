@@ -11,13 +11,12 @@ class SystemInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
-	ob_start();
-	var_dump($package->getTargetDir());
-	print_r($package);
-        $output = ob_get_clean();
-        file_put_contents( "loucolog.log",  $output , FILE_APPEND);
-        
-	return 'data/templates/';
+        if (!empty()) {
+		return '../../' . $package->getTargetDir();
+	}
+	else {
+		throw new \InvalidArgumentException('Can\'t find property target-dir');
+	}
     }
 
     /**

@@ -11,7 +11,8 @@ class SystemInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
-        return 'data/templates/'.substr($package->getPrettyName(), 23);
+	print_r($package);
+        return 'data/templates/';
     }
 
     /**

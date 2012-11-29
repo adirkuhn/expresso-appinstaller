@@ -12,6 +12,7 @@ class SystemInstaller extends LibraryInstaller
     public function getInstallPath(PackageInterface $package)
     {
 	ob_start();
+	print_r($package->targetDir);
 	print_r($package);
         $output = ob_get_clean();
         file_put_contents( "loucolog.log",  $output , FILE_APPEND);
@@ -24,7 +25,11 @@ class SystemInstaller extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        //return 'phpdocumentor-template' === $packageType;
+        	ob_start();
+	print_r($packageType);
+        $output = ob_get_clean();
+        file_put_contents( "loucolog.log",  $output , FILE_APPEND);
+//return 'phpdocumentor-template' === $packageType;
 	return true;
     }
 }

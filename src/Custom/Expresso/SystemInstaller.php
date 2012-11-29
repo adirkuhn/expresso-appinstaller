@@ -12,7 +12,7 @@ class SystemInstaller extends LibraryInstaller
     public function getInstallPath(PackageInterface $package)
     {
 	ob_start();
-	print_r($package->targetDir);
+	print_r($package->getTargetDir());
 	print_r($package);
         $output = ob_get_clean();
         file_put_contents( "loucolog.log",  $output , FILE_APPEND);

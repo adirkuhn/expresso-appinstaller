@@ -11,7 +11,7 @@ class SystemInstaller extends LibraryInstaller
      */
     public function getInstallPath(PackageInterface $package)
     {
-	return ('../../../' . $package->getTargetDir());
+	return ('../../../ExpressoApps/' . $package->getTargetDir());
     }
 
     /**
